@@ -1,21 +1,21 @@
 <?php
-	header('Content-type: application/json');
-	$status = array(
-		'type'=>'success',
-		'message'=>'Dziękujemy za wypełnienie formularza. Nasi konsultanci skontaktują się z Państwem najszybciej, jak to tylko możliwe. '
-	);
+if(isset($_POST['submit'])){
+  $to = 'mateusz.worek@gmail.com';
+  $name = $_POST['name'];
+  $from = $_POST['email'];
+  $message = $POST['message'];
+  $subject = "Contact Form Details";
+  $headers = "From" . $from;
+  $result = mail($to, $subject, $message, $headers);
 
-    $name = @trim(stripslashes($_POST['name']));
-    $email = @trim(stripslashes($_POST['email']));
-    $subject = @trim(stripslashes($_POST['subject']));
-    $message = @trim(stripslashes($_POST['message']));
+  if($result) {
+    echo '<script type="text/javascript">alert("Your message was sent Successfully!")</script>'
+    echo '<script type="text/javascript">window.location.href = window.location.href;</script>'
+  } else {
+    echo '<script type="text/javascript">alert("Sorry! Your message was not sent, Try again later.")</script>'
+    echo '<script type="text/javascript">window.location.href = window.location.href;</script>'
+  }
+}
 
-    $email_from = $email;
-    $email_to = 'mateusz.worek@gmail.com';//replace with your email
 
-    $body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' . $message;
-
-    $success = @mail($email_to, $subject, $body, 'From: <'.$email_from.'>');
-
-    echo json_encode($status);
-    die;
+?>
