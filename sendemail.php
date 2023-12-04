@@ -3,7 +3,7 @@ if(isset($_POST['submit'])){
   $to = 'mateusz.worek@gmail.com';
   $name = $_POST['name'];
   $from = $_POST['email'];
-  $message = $POST['message'];
+  $message = $_POST['message'];
   $subject = "Contact Form Details";
   $headers = "From" . $from;
   $result = mail($to, $subject, $message, $headers);
@@ -16,6 +16,4 @@ if(isset($_POST['submit'])){
     echo '<script type="text/javascript">window.location.href = window.location.href;</script>'
   }
 }
-
-
 ?>
