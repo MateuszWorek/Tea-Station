@@ -348,6 +348,46 @@
         <!-- contact info -->
         <article class="contact-form">
           <h3>contact us</h3>
+          <form action="sendemail.php" method="post">
+            <!-- <form method="post"> -->
+            <div class="form-group">
+              <!-- inputs -->
+              <input
+                type="text"
+                placeholder="name"
+                class="form-control"
+                name="name"
+              />
+              <input
+                type="email"
+                placeholder="email"
+                class="form-control"
+                name="email"
+              />
+              <input
+                type="text"
+                placeholder="subject"
+                class="form-control"
+                name="subject"
+              />
+              <textarea
+                name="message"
+                id=""
+                cols=""
+                rows="5"
+                placeholder="message"
+                class="form-control"
+              ></textarea>
+            </div>
+            <button type="submit" name="submit" class="submit-btn btn">
+              submit here
+            </button>
+          </form>
+        </article>
+        <!-- end of contact info -->
+        <!-- contact info -->
+        <article class="contact-form">
+          <h3>contact us</h3>
           <!-- <form action="sendemail.php" method="post"> -->
           <form method="post">
             <div class="form-group">
