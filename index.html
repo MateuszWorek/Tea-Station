@@ -347,7 +347,7 @@
         <!-- contact info -->
         <article class="contact-form">
           <h3>contact us</h3>
-          <form action="./sendmail.php" method="POST">
+          <form action="sendemail.php" method="post">
             <div class="form-group">
               <!-- inputs -->
               <input
@@ -361,6 +361,12 @@
                 placeholder="email"
                 class="form-control"
                 name="email"
+              />
+              <input
+                type="text"
+                placeholder="subject"
+                class="form-control"
+                name="subject"
               />
               <textarea
                 name="message"
